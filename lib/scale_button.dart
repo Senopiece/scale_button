@@ -32,13 +32,20 @@ class ScaleButton extends StatefulWidget {
   /// Default to [false]
   final bool reverse;
 
-  ScaleButton({this.buttonDecoration, this.duration, this.bound, this.onTap, this.child, this.reverse});
+  ScaleButton(
+      {this.buttonDecoration,
+      this.duration,
+      this.bound,
+      this.onTap,
+      this.child,
+      this.reverse});
 
   @override
   _ScaleButtonState createState() => _ScaleButtonState();
 }
 
-class _ScaleButtonState extends State<ScaleButton> with SingleTickerProviderStateMixin {
+class _ScaleButtonState extends State<ScaleButton>
+    with SingleTickerProviderStateMixin {
   double _scale = 1.0;
   AnimationController _controller;
   bool reverse;
@@ -49,10 +56,10 @@ class _ScaleButtonState extends State<ScaleButton> with SingleTickerProviderStat
       duration: widget?.duration ?? Duration(milliseconds: 300),
       upperBound: widget?.bound ?? 0.2,
     )..addListener(() {
-      setState(() {
-        _scale = reverse ? 1 + _controller.value : 1 - _controller.value;
+        setState(() {
+          _scale = reverse ? 1 + _controller.value : 1 - _controller.value;
+        });
       });
-    });
   }
 
   @override

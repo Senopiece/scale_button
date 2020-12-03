@@ -2,10 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="de6dd5af-b733-4ee1-b823-965cac2ae5bb" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/lib/main.dart" beforeDir="false" afterPath="$PROJECT_DIR$/example/lib/main.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CHANGELOG.md" beforeDir="false" afterPath="$PROJECT_DIR$/CHANGELOG.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/example/pubspec.lock" beforeDir="false" afterPath="$PROJECT_DIR$/example/pubspec.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/test/widget_test.dart" beforeDir="false" afterPath="$PROJECT_DIR$/example/test/widget_test.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/scale_button.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/scale_button.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pubspec.lock" beforeDir="false" afterPath="$PROJECT_DIR$/pubspec.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pubspec.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/pubspec.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/scale_button_test.dart" beforeDir="false" afterPath="$PROJECT_DIR$/test/scale_button_test.dart" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -32,6 +38,7 @@
     <property name="dart.analysis.tool.window.force.activate" value="false" />
     <property name="io.flutter.reload.alreadyRun" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="settings.editor.selected.configurable" value="preferences.keymap" />
     <property name="show.migrate.to.gradle.popup" value="false" />
   </component>
   <component name="SvnConfiguration">
@@ -48,21 +55,29 @@
     <servers />
   </component>
   <component name="WindowStateProjectService">
-    <state width="1238" height="382" key="GridCell.Tab.0.bottom" timestamp="1606976471344">
+    <state width="1238" height="381" key="GridCell.Tab.0.bottom" timestamp="1606993709803">
       <screen x="0" y="25" width="2560" height="1346" />
     </state>
-    <state width="1238" height="382" key="GridCell.Tab.0.bottom/0.25.2560.1346@0.25.2560.1346" timestamp="1606976471344" />
-    <state width="1238" height="382" key="GridCell.Tab.0.center" timestamp="1606976471343">
+    <state width="1238" height="381" key="GridCell.Tab.0.bottom/0.25.2560.1346@0.25.2560.1346" timestamp="1606993709803" />
+    <state width="1238" height="381" key="GridCell.Tab.0.center" timestamp="1606993709803">
       <screen x="0" y="25" width="2560" height="1346" />
     </state>
-    <state width="1238" height="382" key="GridCell.Tab.0.center/0.25.2560.1346@0.25.2560.1346" timestamp="1606976471343" />
-    <state width="1238" height="382" key="GridCell.Tab.0.left" timestamp="1606976471343">
+    <state width="1238" height="381" key="GridCell.Tab.0.center/0.25.2560.1346@0.25.2560.1346" timestamp="1606993709803" />
+    <state width="1238" height="381" key="GridCell.Tab.0.left" timestamp="1606993709802">
       <screen x="0" y="25" width="2560" height="1346" />
     </state>
-    <state width="1238" height="382" key="GridCell.Tab.0.left/0.25.2560.1346@0.25.2560.1346" timestamp="1606976471343" />
-    <state width="1238" height="382" key="GridCell.Tab.0.right" timestamp="1606976471344">
+    <state width="1238" height="381" key="GridCell.Tab.0.left/0.25.2560.1346@0.25.2560.1346" timestamp="1606993709802" />
+    <state width="1238" height="381" key="GridCell.Tab.0.right" timestamp="1606993709803">
       <screen x="0" y="25" width="2560" height="1346" />
     </state>
-    <state width="1238" height="382" key="GridCell.Tab.0.right/0.25.2560.1346@0.25.2560.1346" timestamp="1606976471344" />
+    <state width="1238" height="381" key="GridCell.Tab.0.right/0.25.2560.1346@0.25.2560.1346" timestamp="1606993709803" />
+    <state x="138" y="333" key="SettingsEditor" timestamp="1606993678232">
+      <screen x="0" y="25" width="2560" height="1346" />
+    </state>
+    <state x="138" y="333" key="SettingsEditor/0.25.2560.1346@0.25.2560.1346" timestamp="1606993678232" />
+    <state x="636" y="527" key="com.intellij.ide.util.TipDialog" timestamp="1606981985757">
+      <screen x="0" y="25" width="2560" height="1346" />
+    </state>
+    <state x="636" y="527" key="com.intellij.ide.util.TipDialog/0.25.2560.1346@0.25.2560.1346" timestamp="1606981985757" />
   </component>
 </project>

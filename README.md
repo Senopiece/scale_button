@@ -1,6 +1,6 @@
 # scale_button
 
-Easy-to-use animation button library for Flutter. :smiley:
+A customizable and easy-to-use animation button library for Flutter. Compatible with Android & iOS & Web. :smiley:
 
 
 <br>
