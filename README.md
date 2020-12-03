@@ -1,7 +1,9 @@
 # scale_button
 
-Easy-to-use animation button library for Flutter.
+Easy-to-use animation button library for Flutter. :smiley:
 
+
+<br>
 
 ## Showcase
 
