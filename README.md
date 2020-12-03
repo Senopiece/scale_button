@@ -2,6 +2,9 @@
 
 A customizable and easy-to-use animation button library for Flutter. Compatible with Android & iOS & Web. :smiley:
 
+[![pub](https://img.shields.io/pub/v/scale_button)](https://pub.dev/packages/scale_button)
+
+
 
 <br>
 
