@@ -1,17 +1,34 @@
 import 'package:flutter/material.dart';
 
-class ButtonDecoration {
-  final double height;
-  final double width;
-  final BoxDecoration boxDecoration;
-
-  ButtonDecoration({this.height, this.width, this.boxDecoration});
-}
-
-// ignore: must_be_immutable
 class ScaleButton extends StatefulWidget {
+  ScaleButton({
+    Key key,
+    double width = 200.0,
+    double height = 50.0,
+    BoxDecoration boxDecoration = const BoxDecoration(
+      color: Colors.blueAccent,
+    ),
+    Duration duration = const Duration(milliseconds: 300),
+    double bound = 0.2,
+    VoidCallback onTap,
+    bool reverse = false,
+    Widget child,
+  })  : this.width = width,
+        this.height = height,
+        this.boxDecoration = boxDecoration,
+        this.duration = duration,
+        this.bound = bound,
+        this.onTap = onTap,
+        this.child = child,
+        this.reverse = reverse,
+        super(key: key);
+
+  final double width;
+
+  final double height;
+
   /// Adds a custom decoration to Scale Button
-  final ButtonDecoration buttonDecoration;
+  final BoxDecoration boxDecoration;
 
   /// Adjust the animation speed
   ///
@@ -32,14 +49,6 @@ class ScaleButton extends StatefulWidget {
   /// Default to [false]
   final bool reverse;
 
-  ScaleButton(
-      {this.buttonDecoration,
-      this.duration,
-      this.bound,
-      this.onTap,
-      this.child,
-      this.reverse});
-
   @override
   _ScaleButtonState createState() => _ScaleButtonState();
 }
@@ -48,25 +57,18 @@ class _ScaleButtonState extends State<ScaleButton>
     with SingleTickerProviderStateMixin {
   double _scale = 1.0;
   AnimationController _controller;
-  bool reverse;
-
-  void initAnimationController() {
-    _controller = AnimationController(
-      vsync: this,
-      duration: widget?.duration ?? Duration(milliseconds: 300),
-      upperBound: widget?.bound ?? 0.2,
-    )..addListener(() {
-        setState(() {
-          _scale = reverse ? 1 + _controller.value : 1 - _controller.value;
-        });
-      });
-  }
-
   @override
   void initState() {
-    reverse = widget.reverse ?? false;
-    initAnimationController();
-
+    _controller = AnimationController(
+      vsync: this,
+      duration: widget.duration,
+      upperBound: widget.bound,
+    )..addListener(() {
+        setState(() {
+          _scale =
+              widget.reverse ? 1 + _controller.value : 1 - _controller.value;
+        });
+      });
     super.initState();
   }
 
@@ -96,20 +98,12 @@ class _ScaleButtonState extends State<ScaleButton>
       child: Transform.scale(
         scale: _scale,
         child: Container(
-          width: widget.buttonDecoration?.width ?? 200.0,
-          height: widget.buttonDecoration?.height ?? 50.0,
-          alignment: Alignment.center,
-          decoration: widget.buttonDecoration?.boxDecoration ??
-              BoxDecoration(
-                color: Colors.blueAccent,
-                borderRadius: BorderRadius.circular(24.0),
-              ),
-          child: widget?.child ??
-              Text(
-                "Animation Button",
-                style: TextStyle(color: Colors.white),
-              ),
-        ),
+            width: widget.width,
+            height: widget.height,
+            alignment: Alignment.center,
+            color: widget.boxDecoration == null ? Colors.blueAccent : null,
+            decoration: widget.boxDecoration,
+            child: widget.child),
       ),
     );
   }

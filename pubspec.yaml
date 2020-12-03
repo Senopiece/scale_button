@@ -1,6 +1,6 @@
 name: scale_button
 description: A customizable and easy-to-use animation button library for Flutter. Compatible with Android & iOS & Web.
-version: 1.0.1
+version: 1.1.0
 homepage: https://github.com/mincheol-shin/scale_button
 
 environment:
@@ -16,15 +16,3 @@ dev_dependencies:
     sdk: flutter
 
 flutter:
-  plugin:
-    platforms:
-      android:
-        package: com.den.scaleButton
-        pluginClass: ScaleButton
-      ios:
-        package: com.den.scaleButton
-        pluginClass: ScaleButton
-      web:
-        pluginClass: ScaleButton
-        fileName: scale_button.dart
-
