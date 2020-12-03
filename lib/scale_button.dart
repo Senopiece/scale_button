@@ -1,25 +1,36 @@
-// You have generated a new plugin project without
-// specifying the `--platforms` flag. A plugin project supports no platforms is generated.
-// To add platforms, run `flutter create -t plugin --platforms <platforms> .` under the same
-// directory. You can also find a detailed instruction on how to add platforms in the `pubspec.yaml` at https://flutter.dev/docs/development/packages-and-plugins/developing-packages#plugin-platforms.
-
 import 'package:flutter/material.dart';
 
 class ButtonDecoration {
-  double height;
-  double width;
-  BoxDecoration boxDecoration;
+  final double height;
+  final double width;
+  final BoxDecoration boxDecoration;
 
   ButtonDecoration({this.height, this.width, this.boxDecoration});
 }
 
+// ignore: must_be_immutable
 class ScaleButton extends StatefulWidget {
-  ButtonDecoration buttonDecoration;
-  Duration duration;
-  double bound;
-  VoidCallback onTap;
-  Widget child;
-  bool reverse;
+  /// Adds a custom decoration to Scale Button
+  final ButtonDecoration buttonDecoration;
+
+  /// Adjust the animation speed
+  ///
+  /// Defaults to [300]
+  final Duration duration;
+
+  /// Adjust the shrink & zoom size.
+  ///
+  /// Default to [0.2]
+  final double bound;
+
+  final VoidCallback onTap;
+
+  final Widget child;
+
+  /// You can choose the type of animation [true : shrink, false: zoom]
+  ///
+  /// Default to [false]
+  final bool reverse;
 
   ScaleButton({this.buttonDecoration, this.duration, this.bound, this.onTap, this.child, this.reverse});
 
@@ -38,10 +49,10 @@ class _ScaleButtonState extends State<ScaleButton> with SingleTickerProviderStat
       duration: widget?.duration ?? Duration(milliseconds: 300),
       upperBound: widget?.bound ?? 0.2,
     )..addListener(() {
-        setState(() {
-          _scale = reverse ? 1 + _controller.value : 1 - _controller.value;
-        });
+      setState(() {
+        _scale = reverse ? 1 + _controller.value : 1 - _controller.value;
       });
+    });
   }
 
   @override
@@ -71,7 +82,9 @@ class _ScaleButtonState extends State<ScaleButton> with SingleTickerProviderStat
         _controller.reverse();
       },
       onTap: () {
-        widget.onTap == null ? print("") : widget.onTap();
+        if (widget.onTap != null) {
+          widget.onTap();
+        }
       },
       child: Transform.scale(
         scale: _scale,

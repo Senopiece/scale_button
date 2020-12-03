@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
-import 'dart:async';
 
-import 'package:flutter/services.dart';
 import 'package:scale_button/scale_button.dart';
 
 void main() {
@@ -66,16 +64,24 @@ class _ExampleScreenState extends State<ExampleScreen> {
                   ),
                 ),
                 ScaleButton(
+                  onTap: () {
+                    print("Hello, World!");
+                  },
                   buttonDecoration: ButtonDecoration(
-                      height: 100.0,
-                      width: 150.0,
-                      boxDecoration: BoxDecoration(
-                        color: Colors.orangeAccent,
-                        shape: BoxShape.circle,
-                      )),
+                    height: 100.0,
+                    width: 150.0,
+                    boxDecoration: BoxDecoration(
+                      color: Colors.orangeAccent,
+                      shape: BoxShape.circle,
+                    ),
+                  ),
                   child: Text(
-                    "Custom Button",
-                    style: TextStyle(color: Colors.white, fontSize: 11.0),
+                    "Custom Button\n(reverse)",
+                    style: TextStyle(
+                      color: Colors.white,
+                      fontSize: 11.0,
+                    ),
+                    textAlign: TextAlign.center,
                   ),
                   bound: 0.8,
                   reverse: true,
