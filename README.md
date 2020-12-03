@@ -67,6 +67,9 @@ class _ExampleScreenState extends State<ExampleScreen> {
                 "Basic",
                 style: TextStyle(color: Colors.white),
               ),
+              boxDecoration: BoxDecoration(
+                  color: Colors.blueAccent,
+                  borderRadius: BorderRadius.circular(24.0)),
             ),
             SizedBox(
               height: 14.0,
@@ -77,6 +80,9 @@ class _ExampleScreenState extends State<ExampleScreen> {
                 "Basic (reverse)",
                 style: TextStyle(color: Colors.white),
               ),
+              boxDecoration: BoxDecoration(
+                  color: Colors.blueAccent,
+                  borderRadius: BorderRadius.circular(24.0)),
             ),
             SizedBox(
               height: 36.0,
@@ -85,13 +91,11 @@ class _ExampleScreenState extends State<ExampleScreen> {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 ScaleButton(
-                  buttonDecoration: ButtonDecoration(
-                    height: 100.0,
-                    width: 150.0,
-                    boxDecoration: BoxDecoration(
-                      color: Colors.grey,
-                      shape: BoxShape.circle,
-                    ),
+                  height: 100.0,
+                  width: 150.0,
+                  boxDecoration: BoxDecoration(
+                    color: Colors.grey,
+                    shape: BoxShape.circle,
                   ),
                   bound: 0.5,
                   duration: Duration(milliseconds: 1500),
@@ -104,13 +108,11 @@ class _ExampleScreenState extends State<ExampleScreen> {
                   onTap: () {
                     print("Hello, World!");
                   },
-                  buttonDecoration: ButtonDecoration(
-                    height: 100.0,
-                    width: 150.0,
-                    boxDecoration: BoxDecoration(
-                      color: Colors.orangeAccent,
-                      shape: BoxShape.circle,
-                    ),
+                  height: 100.0,
+                  width: 150.0,
+                  boxDecoration: BoxDecoration(
+                    color: Colors.orangeAccent,
+                    shape: BoxShape.circle,
                   ),
                   child: Text(
                     "Custom Button\n(reverse)",
@@ -131,5 +133,6 @@ class _ExampleScreenState extends State<ExampleScreen> {
     );
   }
 }
+
 
 ```
