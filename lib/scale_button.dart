@@ -23,8 +23,10 @@ class ScaleButton extends StatefulWidget {
         this.reverse = reverse,
         super(key: key);
 
+  /// The width of this canvas element in CSS pixels.
   final double width;
 
+  /// The height of this canvas element in CSS pixels.
   final double height;
 
   /// Adds a custom decoration to Scale Button
@@ -40,8 +42,10 @@ class ScaleButton extends StatefulWidget {
   /// Default to [0.2]
   final double bound;
 
+  /// Called when the user taps this part of the material.
   final VoidCallback onTap;
 
+  /// The widget below this widget in the tree.
   final Widget child;
 
   /// You can choose the type of animation [true : shrink, false: zoom]
