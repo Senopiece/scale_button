@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 class ScaleButton extends StatefulWidget {
   ScaleButton({
-    Key key,
+    Key? key,
     double width = 200.0,
     double height = 50.0,
     BoxDecoration boxDecoration = const BoxDecoration(
@@ -10,9 +10,9 @@ class ScaleButton extends StatefulWidget {
     ),
     Duration duration = const Duration(milliseconds: 300),
     double bound = 0.2,
-    VoidCallback onTap,
+    VoidCallback? onTap,
     bool reverse = false,
-    Widget child,
+    Widget? child,
   })  : this.width = width,
         this.height = height,
         this.boxDecoration = boxDecoration,
@@ -43,10 +43,10 @@ class ScaleButton extends StatefulWidget {
   final double bound;
 
   /// Called when the user taps this part of the material.
-  final VoidCallback onTap;
+  final VoidCallback? onTap;
 
   /// The widget below this widget in the tree.
-  final Widget child;
+  final Widget? child;
 
   /// You can choose the type of animation [true : shrink, false: zoom]
   ///
@@ -60,7 +60,7 @@ class ScaleButton extends StatefulWidget {
 class _ScaleButtonState extends State<ScaleButton>
     with SingleTickerProviderStateMixin {
   double _scale = 1.0;
-  AnimationController _controller;
+  late AnimationController _controller;
   @override
   void initState() {
     _controller = AnimationController(
@@ -94,18 +94,13 @@ class _ScaleButtonState extends State<ScaleButton>
       onTapCancel: () {
         _controller.reverse();
       },
-      onTap: () {
-        if (widget.onTap != null) {
-          widget.onTap();
-        }
-      },
+      onTap: widget.onTap,
       child: Transform.scale(
         scale: _scale,
         child: Container(
             width: widget.width,
             height: widget.height,
             alignment: Alignment.center,
-            color: widget.boxDecoration == null ? Colors.blueAccent : null,
             decoration: widget.boxDecoration,
             child: widget.child),
       ),

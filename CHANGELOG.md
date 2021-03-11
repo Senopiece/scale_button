@@ -1,3 +1,7 @@
+## [2.0.0] - 2021-03-11
+- Stable null safety release.
+
+
 ## [1.1.1] - 2020-12-3
 
 ### Updated
