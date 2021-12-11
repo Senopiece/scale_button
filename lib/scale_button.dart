@@ -1,36 +1,19 @@
 import 'package:flutter/material.dart';
 
 class ScaleButton extends StatefulWidget {
-  ScaleButton({
+  const ScaleButton({
     Key? key,
-    double width = 200.0,
-    double height = 50.0,
-    BoxDecoration boxDecoration = const BoxDecoration(
-      color: Colors.blueAccent,
-    ),
     Duration duration = const Duration(milliseconds: 300),
     double bound = 0.2,
     VoidCallback? onTap,
     bool reverse = false,
-    Widget? child,
-  })  : this.width = width,
-        this.height = height,
-        this.boxDecoration = boxDecoration,
-        this.duration = duration,
+    required Widget child,
+  })  : this.duration = duration,
         this.bound = bound,
         this.onTap = onTap,
         this.child = child,
         this.reverse = reverse,
         super(key: key);
-
-  /// The width of this canvas element in CSS pixels.
-  final double width;
-
-  /// The height of this canvas element in CSS pixels.
-  final double height;
-
-  /// Adds a custom decoration to Scale Button
-  final BoxDecoration boxDecoration;
 
   /// Adjust the animation speed
   ///
@@ -46,7 +29,7 @@ class ScaleButton extends StatefulWidget {
   final VoidCallback? onTap;
 
   /// The widget below this widget in the tree.
-  final Widget? child;
+  final Widget child;
 
   /// You can choose the type of animation [true : shrink, false: zoom]
   ///
@@ -61,8 +44,10 @@ class _ScaleButtonState extends State<ScaleButton>
     with SingleTickerProviderStateMixin {
   double _scale = 1.0;
   late AnimationController _controller;
+
   @override
   void initState() {
+    super.initState();
     _controller = AnimationController(
       vsync: this,
       duration: widget.duration,
@@ -73,13 +58,12 @@ class _ScaleButtonState extends State<ScaleButton>
               widget.reverse ? 1 + _controller.value : 1 - _controller.value;
         });
       });
-    super.initState();
   }
 
   @override
   void dispose() {
-    super.dispose();
     _controller.dispose();
+    super.dispose();
   }
 
   @override
@@ -97,12 +81,7 @@ class _ScaleButtonState extends State<ScaleButton>
       onTap: widget.onTap,
       child: Transform.scale(
         scale: _scale,
-        child: Container(
-            width: widget.width,
-            height: widget.height,
-            alignment: Alignment.center,
-            decoration: widget.boxDecoration,
-            child: widget.child),
+        child: widget.child,
       ),
     );
   }

@@ -3,17 +3,12 @@ import 'package:flutter/material.dart';
 import 'package:scale_button/scale_button.dart';
 
 void main() {
-  runApp(MaterialApp(
-    home: ExampleScreen(),
-  ));
+  runApp(MaterialApp(home: const MyApp()));
 }
 
-class ExampleScreen extends StatefulWidget {
-  @override
-  _ExampleScreenState createState() => _ExampleScreenState();
-}
+class MyApp extends StatelessWidget {
+  const MyApp({Key? key}) : super(key: key);
 
-class _ExampleScreenState extends State<ExampleScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -21,62 +16,59 @@ class _ExampleScreenState extends State<ExampleScreen> {
         centerTitle: true,
         title: Text("Scale Button Example"),
       ),
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            ScaleButton(
+      body: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          ScaleButton(
+            child: Container(
+              height: 48.0,
+              width: 300.0,
+              alignment: Alignment.center,
+              decoration: const BoxDecoration(
+                color: Colors.blueAccent,
+                borderRadius: BorderRadius.all(Radius.circular(24.0)),
+              ),
               child: Text(
                 "Basic",
                 style: TextStyle(color: Colors.white),
               ),
-              boxDecoration: BoxDecoration(
-                  color: Colors.blueAccent,
-                  borderRadius: BorderRadius.circular(24.0)),
             ),
-            SizedBox(
-              height: 14.0,
-            ),
-            ScaleButton(
-              reverse: true,
+          ),
+          const SizedBox(height: 14.0),
+          ScaleButton(
+            reverse: true,
+            child: Container(
+              height: 48.0,
+              width: 300.0,
+              alignment: Alignment.center,
+              decoration: const BoxDecoration(
+                color: Colors.blueAccent,
+                borderRadius: BorderRadius.all(Radius.circular(24.0)),
+              ),
               child: Text(
                 "Basic (reverse)",
                 style: TextStyle(color: Colors.white),
               ),
-              boxDecoration: BoxDecoration(
-                  color: Colors.blueAccent,
-                  borderRadius: BorderRadius.circular(24.0)),
             ),
-            SizedBox(
-              height: 36.0,
-            ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                ScaleButton(
+          ),
+          const SizedBox(height: 36.0),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              const ScaleButton(
+                bound: 0.5,
+                duration: Duration(milliseconds: 1500),
+                child: Text("Text Button"),
+              ),
+              ScaleButton(
+                bound: 0.8,
+                reverse: true,
+                child: Container(
                   height: 100.0,
                   width: 150.0,
-                  boxDecoration: BoxDecoration(
-                    color: Colors.grey,
-                    shape: BoxShape.circle,
-                  ),
-                  bound: 0.5,
-                  duration: Duration(milliseconds: 1500),
-                  child: Text(
-                    "Custom Button",
-                    style: TextStyle(color: Colors.white, fontSize: 11.0),
-                  ),
-                ),
-                ScaleButton(
-                  onTap: () {
-                    print("Hello, World!");
-                  },
-                  height: 100.0,
-                  width: 150.0,
-                  boxDecoration: BoxDecoration(
-                    color: Colors.orangeAccent,
-                    shape: BoxShape.circle,
-                  ),
+                  decoration: const BoxDecoration(
+                      color: Colors.orangeAccent, shape: BoxShape.circle),
+                  alignment: Alignment.center,
                   child: Text(
                     "Custom Button\n(reverse)",
                     style: TextStyle(
@@ -85,13 +77,11 @@ class _ExampleScreenState extends State<ExampleScreen> {
                     ),
                     textAlign: TextAlign.center,
                   ),
-                  bound: 0.8,
-                  reverse: true,
                 ),
-              ],
-            ),
-          ],
-        ),
+              ),
+            ],
+          ),
+        ],
       ),
     );
   }
