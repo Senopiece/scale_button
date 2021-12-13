@@ -1,6 +1,6 @@
 name: scale_button
 description: A customizable and easy-to-use animation button library for Flutter. Compatible with Android & iOS & Web.
-version: 2.1.0
+version: 2.1.2
 homepage: https://github.com/mincheol-shin/scale_button
 
 environment:
